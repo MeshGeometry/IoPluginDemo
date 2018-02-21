@@ -35,5 +35,5 @@ void Mesh_PluginDemo::SolveInstance(
 {
 	//insert your own logic here.
 	//check out the other components for examples.
-	outSolveInstance = inSolveInstance;
+	outSolveInstance[0] = inSolveInstance[0];
 }
