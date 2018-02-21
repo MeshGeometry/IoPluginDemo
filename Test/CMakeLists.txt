@@ -17,21 +17,13 @@ endif ()
 # Set CMake modules search path
 set (CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake/Modules)
 # Include Urho3D Cmake common module
-include (Urho3D-CMake-common)
+include (UrhoCommon)
 
 # Define target name
 set (TARGET_NAME IoTest)
 
 # Define source files
 define_source_files ()
-
-file(
-    GLOB Plugin_SRC
-    "../Source/Mesh_PluginDemo.cpp"
-)
-
-
-list(APPEND SOURCE_FILES ${Plugin_SRC})
 
 #pass console arg
 SET(URHO3D_WIN32_CONSOLE 1)
@@ -45,14 +37,10 @@ include_directories("./googletest/include" "./googletest")
 #define includes
 
 include_directories(../Source)
-include_directories(${IOGRAM_SDK}/Core)
-include_directories(${IOGRAM_SDK}/Geometry)
-include_directories(${IOGRAM_SDK}/ThirdParty/Eigen)
-include_directories(${IOGRAM_SDK}/ThirdParty/Libigl/include)
 
 #link other libraries in
-target_link_libraries(${TARGET_NAME} debug ${IOGRAM_SDK}/Build/Win64/lib/Core_d.lib optimized ${IOGRAM_SDK}/Build/Win64/lib/Core.lib )
-target_link_libraries(${TARGET_NAME} debug ${IOGRAM_SDK}/Build/Win64/lib/Geometry_d.lib  optimized ${IOGRAM_SDK}/Build/Win64/lib/Geometry.lib )
+# target_link_libraries(${TARGET_NAME} Core)
+target_link_libraries(${TARGET_NAME} MyPlugin)
 
 if (MSVC)
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MD")

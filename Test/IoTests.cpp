@@ -10,7 +10,7 @@
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Graphics/Graphics.h>
 
-#include "IoGraph.h"
+#include "Core/IoGraph.h"
 
 using namespace Urho3D;
 

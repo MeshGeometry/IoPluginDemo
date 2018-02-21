@@ -2,7 +2,7 @@
 set (CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake/Modules)
 
 # Include Urho3D Cmake common module
-include (Urho3D-CMake-common)
+include (UrhoCommon)
 
 set(CMAKE_DEBUG_POSTFIX "_d")
 
